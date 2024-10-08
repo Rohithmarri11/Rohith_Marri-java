@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>login page</title> 
+  </head>
+  <style>
+    table, th, td {
+              margin: auto;
+              margin-top: 130px;
+              background-color: #fdb813;
+              border-collapse: collapse;
+            }
+            th, td {
+              padding: 15px;
+            }
+  </style>
+  <script>
+    function validateForm() {
+  let x = document.forms["myForm"]["uname"].value;
+  let y = document.forms["myForm"]["pwd"].value;
+  if (x.length < 8 || y.length < 8) {
+    alert("Username and Password must be atleast 8 characters");
+    return false;
+  }
+  
+}
+  </script>
+  <body>
+      <form name="myForm" action="http://localhost:8081/login/log" method="post" onsubmit="return validateForm()">
+
+         <table>
+         
+          <tr>
+              <td>
+                  <input name="uname" placeholder="Username:" type="text">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <input name="pwd" placeholder="Password:" type="password">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <input type="submit" style="width: 100%;" value="login"/>  
+              </td>
+          </tr>
+      </table>
+
+      </form>
+  </body>
+</html>
